@@ -1,0 +1,8 @@
+flask
+flask_sqlalchemy
+pandas
+werkzeug
+numpy
+sklearn
+keras
+geopy

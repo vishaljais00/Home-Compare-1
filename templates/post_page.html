@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %}  Home Compare  {% endblock %}
+
+{% block body %}
+
+<!--  This is our Card bigning-->
+
+{%  set fname = 'house_images_user/' + house_first.image_exterior  %}
+
+    <div class="page-header header-filter clear-filter " data-parallax="true" style="background-image: url('  {{ url_for('static', filename = 'image/house2.jpg') }}  '); z-index: -1; ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="brand">
+                        <h1 style="color:rgb(255, 255, 255)"> Home - Compare</h1>
+                        <h3> A place where You can Trust.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1 class="display-4">Your Home Post</h1>
+            <img src="{{ url_for('static', filename = fname) }}" class="img-fluid" alt="Responsive image">
+            <hr class="my-4">
+            <h2>Price Quoted by the seller</h2>
+            <p> {{house_first.price_quoted}} Lakhs</p>
+            <h2>Price Predicted by us</h2>
+            <p> {{house_first.price_predicted}} Lakhs</p>
+            <h3> Location</h3>
+            <p> New Delhi </p>
+            <h3>Description of your house</h3>
+            <p> {{house_first.description}} </p>
+
+        </div>
+    </div>
+    <!--  our card ends here-->
+
+{% endblock %}

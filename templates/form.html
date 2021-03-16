@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block title %}  Home Compare - Form  {% endblock %}
+
+{% block body %}
+
+    <div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('{{ url_for('static', filename = 'image/house1.jpeg') }}'); z-index: -1; opacity: 0.8;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="brand">
+                        <h1 style="color:White"> Home-Compare</h1>
+                        <h3> A place where You can Trust.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main main-raised">
+
+        <form method="post" action="/form" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="pb-3">
+                            <div class="form-group ml-4   mt-4">
+                                <label for="bhk"> <b> Rooms in BHK </b> </label>
+                                <input type="number" name="bhk" class="form-control" id="bhk" placeholder="Example 1">
+                            </div>
+
+                            <div class="form-group ml-4   mt-4">
+                                <label for="area"> <b> Area in Square Meter </b> </label>
+                                <input type="text" name="area" class="form-control" id="area" placeholder="Example 400 sq m">
+                            </div>
+                            <div class="form-group  ml-4 mt-2">
+                                <label for="address"> <b> Address  </b></label>
+                                <input type="text" name="address" class="form-control" id="address" placeholder="Example - G-56 Ina Colony New Delhi">
+                            </div>
+
+                            <div class="form-group ml-4  mt-2 border-bottom">
+                                <label for="ready-to-move"> <b> House - condition </b> </label><br>
+                                <input type="radio" id="ready-to-move" name="ready-to-move" value="1">
+                                <label for="not-ready-to-move"> <b>Ready to move</b></label><br>
+                                <input type="radio" id="not-ready-to-move" name="ready-to-move" value="0">
+                                <label for="not-ready-to-move"><b> Not Ready To move</b></label><br>
+
+                            </div>
+
+                            <div class="form-group ml-4  mt-2">
+                                <label for="price"> <b> Price </b></label>
+                                <input type="text" name="price" class="form-control" id="price" placeholder="In INR(Lakhs)">
+                            </div>
+
+                            <div class="form-group  ml-4 mt-2">
+                                <label for="desc"> <b> Description </b></label>
+                                <textarea name="desc" id="desc" class="form-control" placeholder="Give some description about your house" rows="10" style="border: 1px solid ">
+
+                                </textarea>
+                            </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-16 my-2">
+                        <div class="text-center mt-4"> <b> Interior Image of house </b> </div>
+                        <div class="box mt-5">
+                            <div class="js--image-preview" ></div>
+                            <div class="upload-options">
+                                <label>
+                            <input name="interior" type="file" class="image-upload" accept="image/*" />
+                        </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-16">
+                        <div class="box mt-5">
+                            <div class="text-center"> <b> Exterior Image of house </b> </div>
+                            <div class="js--image-preview"></div>
+                            <div class="upload-options">
+                                <label>
+                          <input name="exterior" type="file" class="image-upload" value="" accept="image/*" />
+                      </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btnsumbit" style=" margin-left: 316px;
+            padding-left: 187px;
+            padding-right: 177px;
+        ">Submit</button>
+        </form>
+    </div>
+
+    <!--  End Modal -->
+
+{% endblock %}
