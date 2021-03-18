@@ -31,6 +31,7 @@ class House(db.Model):
     ready = db.Column(db.String(), nullable=False)
     longitude = db.Column(db.String(), nullable=False)
     latitude = db.Column(db.String(), nullable=False)
+    address = db.Column(db.String(), nullable=False)
     description = db.Column(db.String(200), nullable=False)
     image_interior = db.Column(db.String(200), nullable=False)
     image_exterior = db.Column(db.String(200), nullable=False)
@@ -119,7 +120,7 @@ def form():
             price_pred = price_pred - flag_price
 
         entry = House(bhk=bhk, area=area, ready=ready_to_move, longitude=longitude,
-                      latitude=latitude, description=description, image_interior=filename1,
+                      latitude=latitude, address=address, description=description, image_interior=filename1,
                       image_exterior=filename2, price_quoted=price, price_predicted=int(price_pred), date=datetime.now())
 
         db.session.add(entry)

@@ -2,7 +2,7 @@ from geopy.geocoders import Nominatim
 
 
 def get_co(add):
-    geolocator = Nominatim(user_agent="get-lat-long")
+    geolocator = Nominatim(user_agent="latlong")
     location = geolocator.geocode(add)
 
     return location.latitude, location.longitude
