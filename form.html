@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block title %}  Home Compare - Form  {% endblock %}
+
+{% block body %}
+
+    <div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('{{ url_for('static', filename = 'image/house1.jpeg') }}'); z-index: -1; opacity: 0.8;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="brand">
+                        <h1 style="color:White"> Home-Compare</h1>
+                        <h3> A place where You can Trust.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main main-raised">
+
+        <form method="post" action="/form" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="pb-3">
+                        <div class="form-group ml-4  mt-2 border-bottom">
+                            <label for="formGroupExampleInput"> <b> Posted By </b> </label></br>
+                            <input type="radio" id="builder"  name="postedby" value="true">
+                            <label for="ready"> <b>Builder</b></label>&emsp;
+                            <input type="radio" id="dealer"  name="postedby" value="flase">
+                            <label for="notReady"><b>Dealer </b></label>&emsp;
+                            <input type="radio" id="Owner"  name="postedby" value="flase">
+                            <label for="notReady"><b> Owner</b></label>
+                        </div>
+
+                        <div class="form-group ml-4  mt-2 border-bottom">
+                            <label for="formGroupExampleInput"> <b> Under Construction </b> </label><br>
+                            <input type="radio" id="ready"  name="houseType" value="true">
+                            <label for="ready"> <b>Yes</b></label><br>
+                            <input type="radio" id="notReady"  name="houseType" value="flase">
+                            <label for="notReady"><b> no</b></label><br>
+                        </div>
+
+                         <div class="form-group ml-4  mt-2 border-bottom">
+                            <label for="formGroupExampleInput"> <b> RERA Certification </b> </label><br>
+                            <input type="radio" id="ready"  name="rera" value="true">
+                            <label for="ready"> <b>Yes</b></label><br>
+                            <input type="radio" id="notReady"  name="rera" value="flase">
+                            <label for="notReady"><b> no</b></label><br>
+                        </div>
+
+                        <div class="form-group ml-4   mt-4">
+                            <label for="formGroupExampleInput"> <b> Rooms in BHK </b> </label>
+                            <input type="number" type="number" name="bhk" class="form-control" id="formGroupExampleInput"
+                                placeholder="Example 400 sq m">
+                        </div>
+                        <div class="form-group ml-4  mt-2 border-bottom">
+                            <label for="formGroupExampleInput"> <b> BHK or RK </b> </label><br>
+                            <input type="radio" id="bhk"  name="roomtype" value="bhk">
+                            <label for="ready"> <b>BHK</b></label><br>
+                            <input type="radio" id="rk"  name="roomtype" value="rk">
+                            <label for="notReady"><b> Rk</b></label><br>
+                        </div>
+
+                        <div class="form-group ml-4   mt-4">
+                            <label for="formGroupExampleInput"> <b> Area in Square Meter </b> </label>
+                            <input type="text" name="area" class="form-control" id="formGroupExampleInput"
+                                placeholder="Example 400 sq m">
+                        </div>
+                        <div class="form-group  ml-4 mt-2">
+                            <label for="formGroupExampleInput2"> <b> Location</b> </label>
+                            <input type="text" name="location" class="form-control" id="formGroupExampleInput2"
+                                placeholder="Example - Delhi">
+                        </div>
+                        <div class="form-group ml-4  mt-2">
+                            <label for="formGroupExampleInput2"> <b> Price ( to be quoted by user )</b></label>
+                            <input type="number" name="price" class="form-control" id="formGroupExampleInput2"
+                                placeholder="In INR">
+                        </div>
+
+                        <div class="form-group ml-4  mt-2 border-bottom">
+                            <input type="radio" id="Furnished"  name="housetype" value="Furnished">
+                            <label for="Furnished"> <b>Furnished</b></label><br>
+                            <input type="radio" id="Non-Furnished"  name="housetype" value="Non-Furnished">
+                            <label for="Non-Furnished"><b> Non-Furnished</b></label><br>
+                            <input type="radio" id="Semi-Furnished"  name="housetype" value="Semi-Furnished">
+                            <label for="Semi-Furnished"><b> Semi-Furnished</b> </label>
+                        </div>
+
+                        <div class="form-group ml-4  mt-2 border-bottom">
+                            <label for="formGroupExampleInput"> <b> House - condition </b> </label><br>
+                            <input type="radio" id="ready"  name="houseform" value="true">
+                            <label for="ready"> <b>Ready to move</b></label><br>
+                            <input type="radio" id="notReady"  name="houseform" value="flase">
+                            <label for="notReady"><b> Not Ready To move</b></label><br>
+                        </div>
+
+                        <div class="form-group ml-4  mt-2 border-bottom">
+                            <label for="formGroupExampleInput"> <b> Re-sale </b> </label><br>
+                            <input type="radio" id="ready"  name="sale" value="true">
+                            <label for="ready"> <b>yes</b></label><br>
+                            <input type="radio" id="notReady"  name="sale" value="flase">
+                            <label for="notReady"><b> no</b></label><br>
+                        </div>
+
+
+                        <div class="form-group  ml-4 mt-2">
+                            <label for="formGroupExampleInput2"> <b> Description Of Your House </b></label>
+                            <textarea type="text" name="description" class="form-control" id="formGroupExampleInput2"
+                                placeholder="Another input" rows="11" style="border: 1px solid ">
+
+                                </textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- image section start -->
+                <div class="col-md-4">
+                    <div class="col-md-16 my-2">
+                        <div class="text-center"> <b> Interiors Image of house </b> </div>
+                        <div class="box mb-2">
+                            <div class="js--image-preview" value=""></div>
+                            <div class="upload-options">
+                                <label>
+                                    <input type="file" class="image-upload" name="interior" value="" accept="image/*" />
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-16 ">
+                        <div class="text-center"> <b> Exteriors Image of house </b> </div>
+                        <div class="box mt-3">
+                            <div class="js--image-preview"></div>
+                            <div class="upload-options">
+                                <label>
+                                    <input type="file" class="image-upload" name="exterior" value="" value=""
+                                        accept="image/*" />
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- image section end -->
+            <button type="submit" class="btn btn-primary btnsumbit" style=" margin-left: 316px;
+            padding-left: 187px;
+            padding-right: 177px;
+        ">Submit</button>
+        </form>
+    </div>
+
+    <!--  End Modal -->
+
+{% endblock %}
