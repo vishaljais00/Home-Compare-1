@@ -27,11 +27,11 @@
     </a>
 </div>
 
-<div class="row row-cols-3">
+<div class="row row-cols-3 pl-5 pr-5">
 
     {% for house in houses %} {% set fname = 'house_images_user/' + house.image_exterior %}
 
-    <div class="col-3">
+    <div class="col-4">
         <div class="card">
             <a href="/house/{{house.sno}}">
                 <img src="{{ url_for('static', filename = fname) }}" class="card-img-top" alt="..." />
